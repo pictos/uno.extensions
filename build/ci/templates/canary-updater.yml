@@ -16,7 +16,7 @@ steps:
   - task: nventiveCanaryUpdater@5
     displayName: 'Canary Update'
     retryCountOnTaskFailure: 3
-    condition: startsWith(variables['Build.SourceBranch'], 'refs/heads/canary')
+    condition: startsWith(variables['Build.SourceBranch'], 'refs/heads/canaries')
     inputs:
       solution: src/Calculator.sln
       branchToMerge: main
