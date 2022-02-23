@@ -18,7 +18,7 @@ steps:
     retryCountOnTaskFailure: 3
     condition: startsWith(variables['Build.SourceBranch'], 'refs/heads/canaries')
     inputs:
-      solution: src/Calculator.sln
+      solution: '**/*.sln'
       branchToMerge: main
       summaryFile: '$(Build.ArtifactStagingDirectory)/Canary.md'
       resultFile: '$(Build.ArtifactStagingDirectory)/result.json'
