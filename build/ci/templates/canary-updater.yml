@@ -25,6 +25,9 @@ steps:
       nugetUpdaterVersion: 2.0.6
       packageAuthor: nventive
 
+  - powershell: |
+      dotnet tool uninstall -g nventive.nuget.updater.tool
+
   - task: nventiveCanaryUpdater@5
     displayName: 'Canary Update'
     retryCountOnTaskFailure: 3
@@ -36,6 +39,9 @@ steps:
       resultFile: '$(Build.ArtifactStagingDirectory)/result.json'
       nugetUpdaterVersion: 2.0.6
       packageAuthor: nventive
+
+  - powershell: |
+      dotnet tool uninstall -g nventive.nuget.updater.tool
 
   - task: nventiveCanaryUpdater@5
     displayName: 'Canary Update'
