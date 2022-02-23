@@ -15,7 +15,7 @@ jobs:
 
   - template: templates/dotnet-install.yml
 
-  - template: build/ci/templates/canary-updater.yml
+  - template: templates/canary-updater.yml
 
   - bash: |
       chmod +x build/ci/scripts/wasm-uitest-run.sh

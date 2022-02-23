@@ -9,7 +9,7 @@ jobs:
   - checkout: self
     clean: 'true'
 
-  - template: build/ci/templates/canary-updater.yml
+  - template: templates/canary-updater.yml
 
   - task: gitversion/setup@0
     inputs:
