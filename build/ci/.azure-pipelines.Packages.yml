@@ -8,6 +8,8 @@ jobs:
   - checkout: self
     clean: 'true'
 
+  - template: build/ci/templates/canary-updater.yml
+
   - task: gitversion/setup@0
     inputs:
       versionSpec: '5.6.8'
