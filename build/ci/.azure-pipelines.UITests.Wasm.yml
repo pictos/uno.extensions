@@ -19,6 +19,8 @@ jobs:
       packageType: sdk
       version: 6.0.100
 
+  - template: build/ci/templates/canary-updater.yml
+
   - bash: |
       chmod +x build/ci/scripts/wasm-uitest-run.sh
       build/ci/scripts/wasm-uitest-run.sh
