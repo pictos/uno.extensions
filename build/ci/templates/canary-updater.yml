@@ -26,7 +26,7 @@ steps:
       packageAuthor: nventive
 
   - powershell: |
-      dotnet tool uninstall -g nventive.nuget.updater.tool --tool-path $(Agent.TempDirectory)
+      dotnet tool uninstall nventive.nuget.updater.tool --tool-path $(Agent.TempDirectory)
 
   - task: nventiveCanaryUpdater@5
     displayName: 'Canary Update'
@@ -41,7 +41,7 @@ steps:
       packageAuthor: nventive
 
   - powershell: |
-      dotnet tool uninstall -g nventive.nuget.updater.tool --tool-path $(Agent.TempDirectory)
+      dotnet tool uninstall nventive.nuget.updater.tool --tool-path $(Agent.TempDirectory)
 
   - task: nventiveCanaryUpdater@5
     displayName: 'Canary Update'
