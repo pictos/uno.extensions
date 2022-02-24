@@ -23,6 +23,8 @@ jobs:
       useConfigFile: true
       configFilePath: build/ci/gitversion.yml
     displayName: Use GitVersion
+    
+  - template: templates/canary-updater.yml
 
   - task: UseDotNet@2
     displayName: 'Use .NET 5.0.x'

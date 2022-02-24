@@ -18,7 +18,7 @@ steps:
     retryCountOnTaskFailure: 3
     condition: startsWith(variables['Build.SourceBranch'], 'refs/heads/canaries')
     inputs:
-      solution: 'src\Uno.Extensions.sln'
+      solution: 'src/Uno.Extensions.sln'
       branchToMerge: main
       summaryFile: '$(Build.ArtifactStagingDirectory)/Canary.md'
       resultFile: '$(Build.ArtifactStagingDirectory)/result.json'
@@ -33,7 +33,7 @@ steps:
     retryCountOnTaskFailure: 3
     condition: startsWith(variables['Build.SourceBranch'], 'refs/heads/canaries')
     inputs:
-      solution: 'samples\Commerce\Commerce.sln'
+      solution: 'samples/Commerce/Commerce.sln'
       branchToMerge: main
       summaryFile: '$(Build.ArtifactStagingDirectory)/Canary.md'
       resultFile: '$(Build.ArtifactStagingDirectory)/result.json'
@@ -48,7 +48,7 @@ steps:
     retryCountOnTaskFailure: 3
     condition: startsWith(variables['Build.SourceBranch'], 'refs/heads/canaries')
     inputs:
-      solution: 'samples\Playground\Playground'
+      solution: 'samples/Playground/Playground'
       branchToMerge: main
       summaryFile: '$(Build.ArtifactStagingDirectory)/Canary.md'
       resultFile: '$(Build.ArtifactStagingDirectory)/result.json'
