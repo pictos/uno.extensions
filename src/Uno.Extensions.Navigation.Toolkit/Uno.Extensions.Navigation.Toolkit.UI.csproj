@@ -20,6 +20,6 @@
 		<PackageReference Include="Uno.Toolkit.UI" Version="1.2.1" />
 	</ItemGroup>
 	
-	<Import Project="common.props" />
+	
 
 </Project>

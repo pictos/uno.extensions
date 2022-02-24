@@ -7,7 +7,7 @@
 
 	</PropertyGroup>
 
-	<Import Project="common.props" />
+	
 
 	<PropertyGroup>
 		<PackageId>Uno.Extensions.Navigation.UI</PackageId>

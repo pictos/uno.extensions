@@ -22,7 +22,7 @@
 		<PackageReference Include="Uno.UI" Version="4.1.9" />
 	</ItemGroup>
 
-	<Import Project="common.props" />
+	
 
 	<ItemGroup>
 		<ProjectReference Include="Uno.Extensions.Hosting.UWP.Wasm.csproj" ReferenceOutputAssembly="false" LinkLibraryDependencies="false" CopyLocal="false" SkipGetTargetFrameworkProperties="true" GlobalPropertiesToRemove="TargetFramework" />

@@ -6,7 +6,7 @@
 		<TargetFrameworks Condition="'$(UnoTargetFrameworkOverride)'=='' and '$(UnoExtensionsDisableNet6)'=='' and '$(UnoExtensionsDisableNet6Mobile)'==''">$(TargetFrameworks);net6.0-ios;net6.0-android</TargetFrameworks>
 	</PropertyGroup>
 
-	<Import Project="common.props" />
+	
 
 	<PropertyGroup>
 		<DefineConstants>$(DefineConstants);WINUI</DefineConstants>

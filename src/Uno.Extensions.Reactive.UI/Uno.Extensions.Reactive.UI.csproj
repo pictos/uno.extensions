@@ -10,8 +10,6 @@
 		<TargetFrameworks Condition="'$(UnoTargetFrameworkOverride)'=='' and '$(UnoExtensionsDisableNet6)'=='' and '$(UnoExtensionsDisableNet6Mobile)'==''">$(TargetFrameworks);net6.0-ios;net6.0-android</TargetFrameworks>
 		<PackageId>Uno.Extensions.Reactive.UI</PackageId>
 	</PropertyGroup>
-	
-	<Import Project="common.props" />
 
 	<ItemGroup>
 		<PackageReference Include="Uno.UI" Version="4.1.9" />

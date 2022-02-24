@@ -18,6 +18,6 @@
 		<PackageReference Include="Uno.WinUI" Version="4.1.9" />
 	</ItemGroup>
 
-	<Import Project="common.props" />
+	
 
 </Project>

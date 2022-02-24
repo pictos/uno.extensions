@@ -13,8 +13,6 @@
 		<PackageId>Uno.Extensions.Reactive.WinUI</PackageId>
 	</PropertyGroup>
 
-	<Import Project="common.props" />
-
 	<ItemGroup>
 		<PackageReference Include="Uno.WinUI" Version="4.1.9" />
 	</ItemGroup>

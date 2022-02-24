@@ -7,7 +7,7 @@
 		<EnableDefaultPageItems>false</EnableDefaultPageItems>
 	</PropertyGroup>
 
-	<Import Project="common.props" />
+	
 
 	<PropertyGroup>
 		<PackageId>Uno.Extensions.Navigation.Toolkit.WinUI</PackageId>
