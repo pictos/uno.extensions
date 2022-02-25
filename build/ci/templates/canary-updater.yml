@@ -1,19 +1,29 @@
-parameters:
-  SolutionToUpdate: ''
-
 steps:
-
-  - task: nventiveCanaryUpdater@5
-    displayName: 'Canary Update'
-    retryCountOnTaskFailure: 3
-    condition: startsWith(variables['Build.SourceBranch'], 'refs/heads/canaries')
+  - task: UseDotNet@2
+    displayName: 'Use .NET 5.0.x'
     inputs:
-      solution: '${{ parameters.SolutionToUpdate }}'
-      branchToMerge: main
-      summaryFile: '$(Build.ArtifactStagingDirectory)/Canary.md'
-      resultFile: '$(Build.ArtifactStagingDirectory)/result.json'
-      nugetUpdaterVersion: 2.0.6
-      packageAuthor: nventive
+      packageType: sdk
+      version: 5.0.x
 
-  - powershell: |
-      dotnet tool uninstall nventive.nuget.updater.tool --tool-path $(Agent.TempDirectory)
+  - task: UseDotNet@2
+    displayName: 'Use .Net Core runtime 2.2.x'
+    retryCountOnTaskFailure: 3
+    inputs:
+      packageType: runtime
+      version: 2.2.x
+
+  - template: .azure-pipelines.Packages.yml
+    parameters:
+      SolutionToUpdate: 'src/Uno.Extensions.sln'
+
+  - template: .azure-pipelines.Packages.yml
+    parameters:
+      SolutionToUpdate: 'samples/Commerce/Commerce.sln'
+
+  - template: .azure-pipelines.Packages.yml
+    parameters:
+      SolutionToUpdate: 'samples/Playground/Playground.sln'
+
+  - template: .azure-pipelines.Packages.yml
+    parameters:
+      SolutionToUpdate: 'src/Uno.Extensions.Templates/content/unoapp-extensions/MyExtensionsApp.sln'
