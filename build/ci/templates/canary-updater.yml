@@ -12,18 +12,18 @@ steps:
       packageType: runtime
       version: 2.2.x
 
-  - template: .azure-pipelines.Packages.yml
+  - template: canary-update-template.yml
     parameters:
       SolutionToUpdate: 'src/Uno.Extensions.sln'
 
-  - template: .azure-pipelines.Packages.yml
+  - template: canary-update-template.yml
     parameters:
       SolutionToUpdate: 'samples/Commerce/Commerce.sln'
 
-  - template: .azure-pipelines.Packages.yml
+  - template: canary-update-template.yml
     parameters:
       SolutionToUpdate: 'samples/Playground/Playground.sln'
 
-  - template: .azure-pipelines.Packages.yml
+  - template: canary-update-template.yml
     parameters:
       SolutionToUpdate: 'src/Uno.Extensions.Templates/content/unoapp-extensions/MyExtensionsApp.sln'
