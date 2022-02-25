@@ -1,0 +1,29 @@
+steps:
+  - task: UseDotNet@2
+    displayName: 'Use .NET 5.0.x'
+    inputs:
+      packageType: sdk
+      version: 5.0.x
+
+  - task: UseDotNet@2
+    displayName: 'Use .Net Core runtime 2.2.x'
+    retryCountOnTaskFailure: 3
+    inputs:
+      packageType: runtime
+      version: 2.2.x
+
+  - template: .azure-pipelines.Packages.yml
+    parameters:
+      SolutionToUpdate: 'src/Uno.Extensions.sln'
+
+  - template: .azure-pipelines.Packages.yml
+    parameters:
+      SolutionToUpdate: 'samples/Commerce/Commerce.sln'
+
+  - template: .azure-pipelines.Packages.yml
+    parameters:
+      SolutionToUpdate: 'samples/Playground/Playground.sln'
+
+  - template: .azure-pipelines.Packages.yml
+    parameters:
+      SolutionToUpdate: 'src/Uno.Extensions.Templates/content/unoapp-extensions/MyExtensionsApp.sln'
