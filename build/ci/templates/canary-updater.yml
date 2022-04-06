@@ -26,4 +26,8 @@ steps:
 
   - template: canary-update-template.yml
     parameters:
-      SolutionToUpdate: 'src/Uno.Extensions.Templates/content/unoapp-extensions/MyExtensionsApp.sln'
+      SolutionToUpdate: 'src/Uno.Extensions.Templates/content/unoapp-extensions-net6/MyExtensionsApp.sln'
+
+  - template: canary-update-template.yml
+    parameters:
+      SolutionToUpdate: 'src/Uno.Extensions.Templates/content/unoapp-extensions-commerce/MyExtensionsApp.sln'
