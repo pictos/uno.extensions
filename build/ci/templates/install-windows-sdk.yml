@@ -1,5 +1,5 @@
 parameters:
-  sdkVersion: '19041'
+  sdkVersion: '22000'
 
 steps:
   - powershell: .\build\Install-WindowsSdkISO.ps1 ${{parameters.sdkVersion}}

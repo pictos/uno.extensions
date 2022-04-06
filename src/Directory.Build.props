@@ -74,7 +74,7 @@
 
 	<PropertyGroup Condition="$(TargetFramework.StartsWith('uap'))">
 		<IsUWP>true</IsUWP>
-		<TargetPlatformVersion>10.0.19041.0</TargetPlatformVersion>
+		<TargetPlatformVersion>10.0.22000.0</TargetPlatformVersion>
 	</PropertyGroup>
 
 	<PropertyGroup>
