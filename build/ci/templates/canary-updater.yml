@@ -34,4 +34,4 @@ steps:
 
   - template: canary-update-template.yml
     parameters:
-      SolutionToUpdate: 'src/Uno.Extensions.Templates/content/unoapp-extensions-commerce/MyExtensionsApp.sln'
+      SolutionToUpdate: 'src/Uno.Extensions.Templates/content/unoapp-samples-commerce/MyExtensionsApp.sln'
