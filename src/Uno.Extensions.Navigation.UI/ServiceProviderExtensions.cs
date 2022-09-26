@@ -123,18 +123,24 @@ public static class ServiceProviderExtensions
 
 	public static FrameworkElement AttachNavigation(this Window window, IServiceProvider services, string? initialRoute = "", Type? initialView = null, Type? initialViewModel = null)
 	{
-		var root = new ContentControl
-		{
-			HorizontalAlignment = HorizontalAlignment.Stretch,
-			VerticalAlignment = VerticalAlignment.Stretch,
-			HorizontalContentAlignment = HorizontalAlignment.Stretch,
-			VerticalContentAlignment = VerticalAlignment.Stretch
-		};
+		var viewHost = services.GetRequiredService<IViewHostProvider>();
+		var root = viewHost.CreateViewHost();
 		window.Content = root;
 
 		window.AttachServices(services);
 
-		root.Host(initialRoute, initialView, initialViewModel);
+		root.Host(services, initialRoute, initialView, initialViewModel);
+
+		return root;
+	}
+
+	public static FrameworkElement AttachNavigation(this ContentControl parent, IServiceProvider services, string? initialRoute = "", Type? initialView = null, Type? initialViewModel = null)
+	{
+		var viewHost = services.GetRequiredService<IViewHostProvider>();
+		var root = viewHost.CreateViewHost();
+		parent.Content = root;
+
+		root.Host(services, initialRoute, initialView, initialViewModel);
 
 		return root;
 	}

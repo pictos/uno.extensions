@@ -71,6 +71,7 @@ public static class ServiceCollectionExtensions
 						var config = sp.GetRequiredService<NavigationConfig>();
 						return (sp.GetRequiredService(config.RouteResolver!) as IRouteResolver)!;
 					})
+					.AddSingleton<IViewHostProvider, DefaultViewHostProvider>()
 
 					.AddScoped<INavigatorFactory, NavigatorFactory>()
 

@@ -17,19 +17,11 @@ public static class FrameworkElementExtensions
 		return scopedServices;
 	}
 
-	public static async Task HostAsync(this FrameworkElement root, string? initialRoute = "", Type? initialView = null, Type? initialViewModel = null)
+	public static void Host(this FrameworkElement root, IServiceProvider sp, string? initialRoute = "", Type? initialView = null, Type? initialViewModel = null)
 	{
-		// Make sure the element has loaded and is attached to the visual tree
-		await root.EnsureLoaded();
+		var services = sp.CreateNavigationScope();
 
-		Host(root, initialRoute, initialView, initialViewModel);
-	}
-
-	public static void Host(this FrameworkElement root, string? initialRoute = "", Type? initialView = null, Type? initialViewModel = null)
-	{
-
-		var sp = root.FindServiceProvider();
-		var services = sp?.CreateNavigationScope();
+		var viewHostProvider = sp.GetRequiredService<IViewHostProvider>();
 
 		// Create the Root region
 		var elementRegion = new NavigationRegion(root, services);
@@ -50,7 +42,8 @@ public static class FrameworkElementExtensions
 			{
 				start = () => nav.NavigateRouteAsync(root, initialRoute ?? string.Empty);
 			}
-			elementRegion.Services?.Startup(start);
+			var startupTask = elementRegion.Services!.Startup(start);
+			viewHostProvider.InitializeViewHost(root, startupTask);
 		}
 	}
 
