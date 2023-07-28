@@ -21,6 +21,10 @@
 		<PackageReference Include="Uno.Toolkit.WinUI" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Console" />
 		<PackageReference Include="CommunityToolkit.Maui" />
+		<PackageReference Include="SampleBrowser.Maui.Base" />
+		<PackageReference Include="Syncfusion.Maui.Core" />
+		<PackageReference Include="Syncfusion.Maui.Charts" />
+		<PackageReference Include="Syncfusion.Maui.TabView" />
 	</ItemGroup>
 	<ItemGroup Condition="$(IsMauiEmbedding)">
 		<PackageReference Include="Telerik.UI.for.Maui" Condition="$(_UseTelerik)" />
