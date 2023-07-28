@@ -3,10 +3,11 @@ using MControls = Microsoft.Maui.Controls;
 using CommunityToolkit.Maui;
 
 #if MAUI_EMBEDDING
-//using Telerik.Maui.Controls;
-//using Telerik.Maui.Controls.Compatibility;
+using Telerik.Maui.Controls;
+using Telerik.Maui.Controls.Compatibility;
 using MauiControlsExternal;
 using Esri.ArcGISRuntime.Maui;
+using Syncfusion.Maui.Core.Hosting;
 #endif
 
 namespace MauiEmbedding;
@@ -19,25 +20,6 @@ public class App : Application
 	protected async override void OnLaunched(LaunchActivatedEventArgs args)
 	{
 		var builder = this.CreateBuilder(args)
-			.UseMauiEmbedding(maui =>
-			{
-
-				maui
-				.UseMauiCommunityToolkit()
-				.UseArcGISRuntime()
-				.UseTelerik()
-				.UseTelerikControls()
-				.UseCustomLibrary();
-
-				Microsoft.Maui.Handlers.ShapeViewHandler.Mapper.AppendToMapping("BackgroundColor", (h, v) =>
-				{
-					if (v is MControls.BoxView boxview)
-					{
-						boxview.Background = MControls.Brush.Fuchsia;
-						Microsoft.Maui.Handlers.ShapeViewHandler.MapBackground(h, boxview);
-					}
-				});
-			})
 			// Add navigation support for toolkit controls such as TabBar and NavigationView
 			.UseToolkitNavigation()
 			.Configure(host => host
@@ -90,13 +72,14 @@ public class App : Application
 				})
 				.UseMauiEmbedding(this, maui =>
 				{
-
+					Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Your_Key");
 					maui
 					.UseMauiCommunityToolkit()
 #if MAUI_EMBEDDING
-				.UseArcGISRuntime()
-				//.UseTelerik()
-				//.UseTelerikControls()
+					.UseArcGISRuntime()
+					.UseTelerik()
+					.ConfigureSyncfusionCore()
+					.UseTelerikControls()
 				.UseCustomLibrary()
 #endif
 					;
