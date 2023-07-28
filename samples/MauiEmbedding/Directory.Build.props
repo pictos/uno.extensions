@@ -17,7 +17,7 @@
 		<IsMac>false</IsMac>
 		<IsMacCatalyst>false</IsMacCatalyst>
 		<IsWinAppSdk>false</IsWinAppSdk>
-		<_UseTelerik>false</_UseTelerik>
+		<_UseTelerik>true</_UseTelerik>
 	</PropertyGroup>
 
 	<Choose>

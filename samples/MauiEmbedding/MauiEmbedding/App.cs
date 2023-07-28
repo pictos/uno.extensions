@@ -19,6 +19,25 @@ public class App : Application
 	protected async override void OnLaunched(LaunchActivatedEventArgs args)
 	{
 		var builder = this.CreateBuilder(args)
+			.UseMauiEmbedding(maui =>
+			{
+
+				maui
+				.UseMauiCommunityToolkit()
+				.UseArcGISRuntime()
+				.UseTelerik()
+				.UseTelerikControls()
+				.UseCustomLibrary();
+
+				Microsoft.Maui.Handlers.ShapeViewHandler.Mapper.AppendToMapping("BackgroundColor", (h, v) =>
+				{
+					if (v is MControls.BoxView boxview)
+					{
+						boxview.Background = MControls.Brush.Fuchsia;
+						Microsoft.Maui.Handlers.ShapeViewHandler.MapBackground(h, boxview);
+					}
+				});
+			})
 			// Add navigation support for toolkit controls such as TabBar and NavigationView
 			.UseToolkitNavigation()
 			.Configure(host => host
