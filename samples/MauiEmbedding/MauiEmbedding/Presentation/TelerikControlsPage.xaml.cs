@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DataTemplate = Microsoft.Maui.Controls.DataTemplate;
 using Telerik.Maui.Controls.Compatibility.DataGrid;
+using DataTemplate = Microsoft.Maui.Controls.DataTemplate;
+
 using Page = Microsoft.UI.Xaml.Controls.Page;
 
 namespace MauiEmbedding.Presentation;

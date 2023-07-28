@@ -80,7 +80,7 @@ public class App : Application
 					.UseTelerik()
 					.ConfigureSyncfusionCore()
 					.UseTelerikControls()
-				.UseCustomLibrary()
+					.UseCustomLibrary()
 #endif
 					;
 
@@ -115,6 +115,7 @@ public class App : Application
 			new ViewMap<EsriMapsPage, EsriMapsViewModel>(),
 #endif
 			new ViewMap<ExternalLibPage, ExternalLibViewModel>(),
+			new ViewMap<SyncfusionControlsPage, SyncfusionControlsViewModel>(),
 			new ViewMap<MCTControlsPage, MCTControlsViewModel>()
 		);
 
@@ -131,6 +132,7 @@ public class App : Application
 					new RouteMap("EsriMaps", View: views.FindByViewModel<EsriMapsViewModel>()),
 					new RouteMap("ExternalLib", View: views.FindByViewModel<ExternalLibViewModel>()),
 					new RouteMap("TelerikControls", View: views.FindByViewModel<TelerikControlsViewModel>()),
+					new RouteMap("SyncfusionControls", View: views.FindByViewModel<SyncfusionControlsViewModel>()),
 #endif
 				}
 			)

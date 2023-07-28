@@ -9,7 +9,6 @@
 	xmlns:utu="using:Uno.Toolkit.UI"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-	xmlns:telerik="using:Telerik.Maui.Controls"
 	mc:Ignorable="d">
 	<!--  xmlns:telerik="using:Telerik.Maui.Controls"  -->
 
