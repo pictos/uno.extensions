@@ -19,7 +19,6 @@
 		<Button uen:Navigation.Request="MauiColors" Content="Maui Colors and Resources" />
 		<Button uen:Navigation.Request="ExternalLib" Content="Referenced External library controls" />
 		<Button uen:Navigation.Request="EsriMaps" Content="ESRI maps page sample" />
-		<Button uen:Navigation.Request="SyncfusionControls" Content="Syncfusion controls" />
 	</StackPanel>
 
 </Page>
